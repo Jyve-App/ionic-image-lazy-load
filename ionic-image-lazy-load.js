@@ -46,7 +46,7 @@ angular.module('ionicLazyLoad')
 
                 var loader;
                 if ($attributes.imageLazyLoader) {
-                    loader = $compile('<div class="image-loader-container"><ion-spinner class="image-loader" icon="' + $attributes.imageLazyLoader + '"></ion-spinner></div>')($scope);
+                    loader = $compile('<div class="image-loader-container"><ion-spinner class="image-loader ' + $attributes.imageLazyLoaderClass +'" icon="' + $attributes.imageLazyLoader + '"></ion-spinner></div>')($scope);
                     $element.after(loader);
                 }
 
@@ -54,7 +54,7 @@ angular.module('ionicLazyLoad')
                     if(loader)
                         loader.remove();
                     if ($attributes.imageLazyLoader) {
-                        loader = $compile('<div class="image-loader-container"><ion-spinner class="image-loader" icon="' + $attributes.imageLazyLoader + '"></ion-spinner></div>')($scope);
+                        loader = $compile('<div class="image-loader-container"><ion-spinner class="image-loader ' + $attributes.imageLazyLoaderClass +'" icon="' + $attributes.imageLazyLoader + '"></ion-spinner></div>')($scope);
                         $element.after(loader);
                     }
                     var deregistration = $scope.$on('lazyScrollEvent', function () {
